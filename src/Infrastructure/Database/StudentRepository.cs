@@ -1,0 +1,27 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+
+namespace StudentsService.Infrastructure.Database
+{
+    public class StudentRepository(AppDbContext context)
+    {
+        private readonly AppDbContext _context = context;
+
+        public Student Add(Student student)
+        {
+            _context.Students.Add(student);
+            _context.SaveChanges();
+            return student;
+        }
+
+        public List<Student> GetAll()
+        {
+            return _context.Students.ToList();
+        }
+
+        public Student? GetById(Guid id)
+        {
+            return _context.Students.Find(id);
+        }
+    }
+}
