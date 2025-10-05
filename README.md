@@ -47,4 +47,4 @@ This repository contains the **StudentsService** project, built with C# using th
 - For issues with ports or configuration, check `appsettings.json` and environment variables.
 
 
-**Maintainer:** [DaviLuquini](https://github.com/DaviLuquini)
+**Responsible:** [DaviLuquini](https://github.com/DaviLuquini)
