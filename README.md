@@ -1,11 +1,24 @@
 # StudentsService
 
-This repository contains the **StudentsService** project, built with C# using the .NET framework. The project provides services related to student management.
+This repository contains the **StudentsService** project, built with C# using the .NET and ASP.NET framework. The project provides services related to student management.
 
 ## Prerequisites
 
 - [.NET SDK](https://dotnet.microsoft.com/download) (.NET 8)
 - Git (to clone the repository)
+- PostgreSQL (default connection expects a database named `students_service`)
+
+## Configuration
+
+Before running the project, make sure to update `appsettings.json` with your PostgreSQL credentials:
+
+{
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=5432;Database=students_service;User Id=postgres;Password=postgres"
+  }
+}
+
 
 ## Getting Started
 
