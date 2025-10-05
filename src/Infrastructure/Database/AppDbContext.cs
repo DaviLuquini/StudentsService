@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentsService.Models;
 
 namespace StudentsService.Infrastructure.Database
 {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentsService.Models;
 
 
 namespace StudentsService.Infrastructure.Database
@@ -7,10 +8,17 @@ namespace StudentsService.Infrastructure.Database
     {
         private readonly AppDbContext _context = context;
 
-        public Student Add(Student student)
+        public Student Add(StudentDTO dto)
         {
+            var student = new Student {
+                Id = Guid.NewGuid(),
+                Name = dto.Name,
+                Grade = dto.Grade
+            };
+
             _context.Students.Add(student);
             _context.SaveChanges();
+
             return student;
         }
 
