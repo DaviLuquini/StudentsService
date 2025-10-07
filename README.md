@@ -2,6 +2,10 @@
 
 This repository contains the **StudentsService** project, built with C# using the .NET and ASP.NET framework. The project provides services related to student management.
 
+## Swagger Documentation:
+
+<img width="1912" height="957" alt="image" src="https://github.com/user-attachments/assets/15e9afdf-7781-4d10-ba03-bded6eb59df8" />
+
 ## Prerequisites
 
 - [.NET SDK](https://dotnet.microsoft.com/download) (.NET 8)
