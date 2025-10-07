@@ -12,7 +12,7 @@ public class StudentsController(StudentRepository repository) : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<StudentResponseDTO>> GetStudentList()
     {
-        var students = _repository.GetAll();
+        var students = _repository.GetAllStudents();
 
         var result = students.Select(s => new StudentResponseDTO {
             Id = s.Id,
@@ -27,7 +27,7 @@ public class StudentsController(StudentRepository repository) : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<StudentResponseDTO> GetById(Guid id)
     {
-        var student = _repository.GetById(id);
+        var student = _repository.GetStudentById(id);
         if (student == null)
             return NotFound("Student not found");
 
@@ -47,7 +47,7 @@ public class StudentsController(StudentRepository repository) : ControllerBase
         if (student.Grade < 0 || student.Grade > 10)
             return BadRequest("Grade must be between 0 and 10");
 
-        return Ok(_repository.Add(student));
+        return Ok(_repository.AddStudent(student));
     }
 
     static private char GetFirstNonRepeatingLetter(string name)

@@ -8,7 +8,7 @@ namespace StudentsService.Infrastructure.Database
     {
         private readonly AppDbContext _context = context;
 
-        public Student Add(StudentDTO dto)
+        public Student AddStudent(StudentDTO dto)
         {
             var student = new Student {
                 Id = Guid.NewGuid(),
@@ -22,12 +22,12 @@ namespace StudentsService.Infrastructure.Database
             return student;
         }
 
-        public List<Student> GetAll()
+        public List<Student> GetAllStudents()
         {
             return _context.Students.ToList();
         }
 
-        public Student? GetById(Guid id)
+        public Student? GetStudentById(Guid id)
         {
             return _context.Students.Find(id);
         }
